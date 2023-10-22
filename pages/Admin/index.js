@@ -1,8 +1,11 @@
 import React from 'react'
-
+import Login from '@/'
 const index = () => {
   return (
-    <div>index</div>
+    <div>
+         hello
+        <Login/>
+    </div>
   )
 }
 
