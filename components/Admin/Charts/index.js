@@ -1,9 +1,9 @@
 import React from 'react'
 
-const index = () => {
+const Charts = () => {
   return (
     <div>index</div>
   )
 }
 
-export default index 
+export default Charts 

@@ -1,5 +1,5 @@
 import React from 'react'
-import Login from '@/'
+import Login from '@/components/Admin/Login'
 const index = () => {
   return (
     <div>

@@ -1,9 +1,9 @@
 import { Box, Grid } from '@mui/material'
 import React from 'react'
-import Sidebar from '@/component/Admin/Sidebar'
-import HeroSection from '@/component/Admin/HeroSection'
+import Sidebar from '@/components/Admin/Sidebar'
+import HeroSection from '@/components/Admin/HeroSection'
 
-const index = () => {
+const Home = () => {
   return (
     <Box>
         <Grid container spacing={4}>
@@ -21,4 +21,4 @@ const index = () => {
   )
 }
 
-export default index
+export default Home
