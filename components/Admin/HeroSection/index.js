@@ -1,12 +1,11 @@
 import { Box, Divider, Grid, Typography } from '@mui/material'
 import { BarChart, Bar, Rectangle, XAxis, YAxis, CartesianGrid, Tooltip, Legend, ResponsiveContainer } from 'recharts';
-import Navbar from "@/component/Admin/Navbar"
+// import Navbar from "../Admin/Navbar"
 import React from 'react'
 import Image from 'next/image'
+import Charts from '@/components/Admin/Charts'
 
-
-import Charts from '@/component/Admin/Charts'
-const index = () => {
+const HeroSection = () => {
   const data = [
     {
       name: '11 May',
@@ -53,7 +52,7 @@ const index = () => {
   ];
   return (
     <>
-     <Navbar />
+     {/* <Navbar /> */}
     <Box mt="40px" >
    
         <Grid container spacing={6}>
@@ -160,4 +159,4 @@ const index = () => {
   )
 }
 
-export default index
+export default HeroSection;

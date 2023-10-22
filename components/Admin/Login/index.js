@@ -1,9 +1,9 @@
 import { Box, Stack, Typography,TextField, Button} from '@mui/material'
-import EmailIcon from '@mui/icons-material/Email';
-import Avatar from '@mui/material/Avatar';
+// import EmailIcon from '@mui/icons-material/Email';
+// import Avatar from '@mui/material/Avatar';
 import React from 'react'
-
-const index = () => {
+import Link from 'next/link'
+const Login = () => {
   return (
     <Box  display="flex" justifyContent="center" alignItems="center" height="100vh" backgroundColor="#E3E8FC">
         {/* <Grid> */}
@@ -15,9 +15,9 @@ const index = () => {
         
         <TextField id="filled-basic" label="Email" variant="filled" sx={{marginBottom:"30px" ,width:"70%"}} />
         <TextField id="filled-basic" label="Password" variant="filled" type='password' sx={{marginBottom:"80px", width:"70%"}}/>
-        <Button  sx={{backgroundColor:"#4506A8",color:"white",width:"50%"}}>
+        <Link href='/admin/dashboard' style={{textDecoration:'none'}}><Button  sx={{backgroundColor:"#4506A8",color:"white",width:"50%"}}>
             Login
-        </Button>
+        </Button></Link>
         
         </Stack>
 
@@ -27,4 +27,4 @@ const index = () => {
   )
 }
 
-export default index
+export default Login;

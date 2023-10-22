@@ -5,7 +5,7 @@ import DashboardIcon from '@mui/icons-material/Dashboard';
 import AccountCircleIcon from '@mui/icons-material/AccountCircle';
 import React from 'react'
 
-const index = () => {
+const Sidebar = () => {
   return (
     
     <Box height="100vh" backgroundColor="white" >
@@ -42,4 +42,4 @@ const index = () => {
   )
 }
 
-export default index
+export default Sidebar;
