@@ -6,7 +6,7 @@ const index = () => {
   return (
     <Box  backgroundColor="#E3E8FC" >
             <Home />
-            hello
+            
            
     </Box>
   )

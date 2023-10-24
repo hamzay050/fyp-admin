@@ -1,62 +1,67 @@
 import { Box, Divider, Grid, Typography } from '@mui/material'
-import { BarChart, Bar, Rectangle, XAxis, YAxis, CartesianGrid, Tooltip, Legend, ResponsiveContainer } from 'recharts';
-// import Navbar from "../Admin/Navbar"
+// import { BarChart, Bar, Rectangle, XAxis, YAxis, CartesianGrid, Tooltip, Legend, ResponsiveContainer } from 'recharts';
+import { LineChart, Line, XAxis, YAxis, CartesianGrid, Tooltip, Legend, ResponsiveContainer } from 'recharts';
+
+import Navbar from '../Navbar'
 import React from 'react'
 import Image from 'next/image'
 import Charts from '@/components/Admin/Charts'
 
 const HeroSection = () => {
-  const data = [
+  const data = [ 
     {
-      name: '11 May',
-      Expense: 4000,
-      Income: 2400,
-      amt: 2400,
+      name: 'May 1',
+      Male: 4,
+      Female: 2,
+         amt: 4,
     },
     {
-      name: '12 May',
-      Expense: 3000,
-      Income: 1398,
+      name: 'May 2',
+     Male: 4,
+      Female: 2,
       amt: 2210,
     },
     {
-      name: '13 May',
-      Expense: 2000,
-      Income: 9800,
+      name: 'May 3',
+      Male: 4,
+      Female: 2,
       amt: 2290,
     },
     {
-      name: '14 May',
-      Expense: 2780,
-      Income: 3908,
+      name: 'May 4',
+     Male: 9,
+      Female: 2,
       amt: 2000,
     },
     {
-      name: '15 May',
-      Expense: 1890,
-      Income: 4800,
+      name: 'May 5',
+     Male: 4,
+      Female: 5,
       amt: 2181,
     },
     {
-      name: '16 May',
-      Expense: 2390,
-      Income: 3800,
+      name: 'May 6',
+     Male: 6,
+      Female: 10,
       amt: 2500,
     },
     {
-      name: '17 May',
-      Expense: 3490,
-      Income: 4300,
+      name: 'May 7',
+      Male: 14,
+      Female: 5,
       amt: 2100,
     },
   ];
+  
   return (
     <>
-     {/* <Navbar /> */}
-    <Box mt="40px" >
+     <Navbar />
+     
+
+    <Box mt="40px" overflow="hidden" >
    
         <Grid container spacing={6}>
-            <Grid item lg={3} md={3} sm={3} xs={3}>
+            <Grid item lg={4} md={4} sm={6} xs={6}>
            <Box height="270px" width="250px" textAlign="center"  borderRadius="27px" backgroundColor="#FFFFFF"  boxShadow="5px 5px 10px #dbdbdb,
             -5px -5px 10px #ffffff " >
               <Image  
@@ -73,7 +78,7 @@ const HeroSection = () => {
              
               </Box >
             </Grid>
-            <Grid item lg={3} md={3} sm={3} xs={3}>
+            <Grid item lg={4} md={4} sm={6} xs={6}>
             
             <Box  height="270px" width="250px" textAlign="center"  borderRadius="27px" backgroundColor="#FFFFFF" boxShadow="5px 5px 10px #dbdbdb,
         
@@ -92,7 +97,7 @@ const HeroSection = () => {
               </Box>
             
             </Grid>
-            <Grid item lg={3} md={3} sm={3} xs={3}>
+            <Grid item lg={4} md={4} sm={6} xs={6}>
            
             <Box height="270px" width="250px" textAlign="center"  borderRadius="27px" backgroundColor="#FFFFFF"  boxShadow="5px 5px 10px #dbdbdb,
             -5px -5px 10px #ffffff ">
@@ -110,19 +115,14 @@ const HeroSection = () => {
               </Box>
                
             </Grid>
-            <Grid item lg={3} md={3} sm={3}>
-              helloo
-
-            </Grid>
-            <Grid item lg={7} md={7}>
-            <Box height="330px" width="550px" textAlign="center"  borderRadius="27px" backgroundColor="#FFFFFF"  boxShadow="  5px 5px 10px #dbdbdb,
+           
+            <Grid item lg={12} md={12} sm={12}>
+           <Box height="350px" width="1000px"  textAlign="center"  borderRadius="27px" backgroundColor="#FFFFFF"  boxShadow="5px 5px 10px #dbdbdb,
             -5px -5px 10px #ffffff ">
-              <Typography variant='h5'>
-                Daily Revenue Report
-              </Typography>
+              <Typography variant='h5'> Daily Doctors Enroll</Typography>
               <Divider/>
               <ResponsiveContainer width="100%" height="100%">
-        <BarChart
+        <LineChart
           width={500}
           height={300}
           data={data}
@@ -130,7 +130,7 @@ const HeroSection = () => {
             top: 5,
             right: 30,
             left: 20,
-            bottom: 5,
+            bottom: 50,
           }}
         >
           <CartesianGrid strokeDasharray="3 3" />
@@ -138,21 +138,17 @@ const HeroSection = () => {
           <YAxis />
           <Tooltip />
           <Legend />
-          <Bar dataKey="Income" fill="#26A59A" activeBar={<Rectangle fill="pink" stroke="blue" />} />
-          <Bar dataKey="Expense" fill="#FFDF6C" activeBar={<Rectangle fill="gold" stroke="purple" />} />
-        </BarChart>
+          <Line type="monotone" dataKey="Male" stroke="#8884d8" activeDot={{ r: 8 }} />
+          <Line type="monotone" dataKey="Female" stroke="#82ca9d" />
+        </LineChart>
       </ResponsiveContainer>
-              </Box>
-            </Grid>
-            <Grid item lg={5} md={5}>
-          <Box height="330px" width="330px" textAlign="center"  borderRadius="27px" backgroundColor="#FFFFFF"  boxShadow="  5px 5px 10px #dbdbdb,
-            -5px -5px 10px #ffffff ">
-<Charts/>
-          </Box>
-            </Grid>
+            </Box>
+           </Grid>
+           
         </Grid>
-        {/* <Grid container>
-       
+{/*         
+        <Grid container>
+        
         </Grid> */}
     </Box>
     </>

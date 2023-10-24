@@ -8,7 +8,7 @@ const Home = () => {
     <Box>
         <Grid container spacing={4}>
             <Grid item lg={3} >
-                <Box>
+                <Box marginLeft="0">
         <Sidebar/>
         </Box>
         </Grid>

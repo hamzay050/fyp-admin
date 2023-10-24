@@ -13,6 +13,9 @@ html,body{
   margin: 0px;
   background-color: #e1eeff;
 }
+.box{
+  border-top-left-radius: 50%;
+}
 
 
 
