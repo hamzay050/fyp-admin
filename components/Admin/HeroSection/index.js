@@ -1,11 +1,8 @@
 import { Box, Divider, Grid, Typography } from '@mui/material'
 // import { BarChart, Bar, Rectangle, XAxis, YAxis, CartesianGrid, Tooltip, Legend, ResponsiveContainer } from 'recharts';
 import { LineChart, Line, XAxis, YAxis, CartesianGrid, Tooltip, Legend, ResponsiveContainer } from 'recharts';
-
-import Navbar from '../Navbar'
 import React from 'react'
 import Image from 'next/image'
-import Charts from '@/components/Admin/Charts'
 
 const HeroSection = () => {
   const data = [ 
@@ -55,7 +52,6 @@ const HeroSection = () => {
   
   return (
     <>
-     <Navbar />
      
 
     <Box mt="40px" overflow="hidden" >

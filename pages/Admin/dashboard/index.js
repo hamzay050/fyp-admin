@@ -1,13 +1,11 @@
 import React from 'react'
-import Home from  '@/components/Admin/Home'
+import { Box } from '@mui/material'
+import Dashboard from '../../../components/Admin/Dashboard'
 
-import { Grid,Box } from '@mui/material'
 const index = () => {
   return (
-    <Box  backgroundColor="#E3E8FC" >
-            <Home />
-            
-           
+    <Box>
+           <Dashboard/> 
     </Box>
   )
 }
