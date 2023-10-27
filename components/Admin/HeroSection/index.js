@@ -8,44 +8,44 @@ const HeroSection = () => {
   const data = [ 
     {
       name: 'May 1',
-      Male: 4,
-      Female: 2,
+      Doctor: 4,
+      Patient: 2,
          amt: 4,
     },
     {
       name: 'May 2',
-     Male: 4,
-      Female: 2,
+     Doctor: 4,
+      Patient: 2,
       amt: 2210,
     },
     {
       name: 'May 3',
-      Male: 4,
-      Female: 2,
+      Doctor: 4,
+      Patient: 2,
       amt: 2290,
     },
     {
       name: 'May 4',
-     Male: 9,
-      Female: 2,
+     Doctor: 9,
+      Patient: 2,
       amt: 2000,
     },
     {
       name: 'May 5',
-     Male: 4,
-      Female: 5,
+     Doctor: 4,
+      Patient: 5,
       amt: 2181,
     },
     {
       name: 'May 6',
-     Male: 6,
-      Female: 10,
+     Doctor: 6,
+      Patient: 10,
       amt: 2500,
     },
     {
       name: 'May 7',
-      Male: 14,
-      Female: 5,
+      Doctor: 14,
+      Patient: 5,
       amt: 2100,
     },
   ];
@@ -57,7 +57,7 @@ const HeroSection = () => {
     <Box mt="40px" overflow="hidden" >
    
         <Grid container spacing={6}>
-            <Grid item lg={4} md={4} sm={6} xs={6}>
+            {/* <Grid item lg={4} md={4} sm={6} xs={6}>
            <Box height="270px" width="250px" textAlign="center"  borderRadius="27px" backgroundColor="#FFFFFF"  boxShadow="5px 5px 10px #dbdbdb,
             -5px -5px 10px #ffffff " >
               <Image  
@@ -110,12 +110,11 @@ const HeroSection = () => {
               </Typography>
               </Box>
                
-            </Grid>
+            </Grid> */}
            
             <Grid item lg={12} md={12} sm={12}>
-           <Box height="350px" width="1000px"  textAlign="center"  borderRadius="27px" backgroundColor="#FFFFFF"  boxShadow="5px 5px 10px #dbdbdb,
-            -5px -5px 10px #ffffff ">
-              <Typography variant='h5'> Daily Doctors Enroll</Typography>
+           <Box height="250px" width="1000px"  textAlign="center" sx={{border:'1px solid #d5d3d3',borderRadius:'5px',margin:'0 1rem'}}>
+              <Typography variant='body1' sx={{fontWeight:'600',color:'#3c3e3ee6',margin:'0.5rem 0'}}> Daily Enrollments</Typography>
               <Divider/>
               <ResponsiveContainer width="100%" height="100%">
         <LineChart
@@ -123,10 +122,10 @@ const HeroSection = () => {
           height={300}
           data={data}
           margin={{
-            top: 5,
+            top: 0,
             right: 30,
             left: 20,
-            bottom: 50,
+            bottom: 45,
           }}
         >
           <CartesianGrid strokeDasharray="3 3" />
@@ -134,18 +133,14 @@ const HeroSection = () => {
           <YAxis />
           <Tooltip />
           <Legend />
-          <Line type="monotone" dataKey="Male" stroke="#8884d8" activeDot={{ r: 8 }} />
-          <Line type="monotone" dataKey="Female" stroke="#82ca9d" />
+          <Line type="monotone" dataKey="Doctor" stroke="#8884d8" activeDot={{ r: 8 }} />
+          <Line type="monotone" dataKey="Patient" stroke="#82ca9d" />
         </LineChart>
       </ResponsiveContainer>
             </Box>
            </Grid>
            
         </Grid>
-{/*         
-        <Grid container>
-        
-        </Grid> */}
     </Box>
     </>
   )

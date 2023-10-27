@@ -1,28 +1,28 @@
-import { Box, Stack, Typography,TextField, Button} from '@mui/material'
-// import EmailIcon from '@mui/icons-material/Email';
-// import Avatar from '@mui/material/Avatar';
+import { Box, Stack, Typography,TextField, Button, Divider} from '@mui/material'
 import React from 'react'
 import Link from 'next/link'
 const Login = () => {
   return (
-    <Box  display="flex" justifyContent="center" alignItems="center" height="100vh" backgroundColor="#E3E8FC">
-        {/* <Grid> */}
-            {/* <Grid item lg={12} md={12}> */}
-        <Stack sx={{height:"70%",width:"35%",boxShadow: "20px 20px 50px grey", borderRadius:"15px", display:"flex", justifyContent:"center",alignItems:"center",backgroundColor:"white"}}>
-        {/* <Avatar sx={{ backgroundColor:"#4506A8", width:"80px", height:"80px", marginTop:"50px" }}>N</Avatar> */}
-        <Typography variant='h4' sx={{paddingBottom:"70px"}}> Admin Login</Typography>
-    
-        
-        <TextField id="filled-basic" label="Email" variant="filled" sx={{marginBottom:"30px" ,width:"70%"}} />
-        <TextField id="filled-basic" label="Password" variant="filled" type='password' sx={{marginBottom:"60px", width:"70%"}}/>
-        <Link href='/admin/dashboard' style={{textDecoration:'none'}}><Button variant='contained' color='secondary' sx={{color:'white',width:'300px'}}>
-            Login
-        </Button></Link>
-        
-        </Stack>
-
-        {/* </Grid>
-        </Grid> */}
+    <Box  display="flex" justifyContent="center" alignItems="center" height="100vh">
+        <Box sx={{height:"65%",width:"33%", borderRadius:"10px",backgroundColor:"white"}}>
+          <Typography variant='h5' sx={{textAlign:'center',margin:'1rem 0',fontWeight:600,color:'#424140b8'}}>Admin Login</Typography>
+          <Divider/>
+          <Box sx={{display:'flex',flexDirection:'column',alignItems:'center',justifyContent:'center',height:'60%'}}>
+            <TextField
+            variant='standard'
+            label='Email'
+            type='email'
+            sx={{width:'80%',margin:'1rem 0'}}/>
+             <TextField
+            variant='standard'
+            label='Password'
+            type='password'
+            sx={{width:'80%',margin:'1rem 0'}}/>
+          </Box>
+          <Link href='/admin/dashboard' style={{textDecoration:'none',display:'flex',justifyContent:'center'}}>
+            <Button variant='contained' color='secondary' sx={{color:'white',width:'80%'}}>Login</Button>
+          </Link>
+        </Box>
     </Box>
   )
 }
