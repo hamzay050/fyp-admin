@@ -1,8 +1,11 @@
 import '@/styles/globals.css'
 import { createTheme,colors,ThemeProvider,Grid } from '@mui/material'
-import Sidebar from '@/components/Admin/Sidebar'
+import Sidebar from '@/components/Sidebar'
 import { useRouter } from 'next/router'
 import { useEffect, useState } from 'react'
+import AppContextProvider from "@/context/appContext"
+import GlobalSnackbar from "@/components/Snackbar"
+import SimpleBackdrop from "@/components/SimpleBackdrop"
 
 export default function App({ Component, pageProps }) {
   const [route, setRoute] = useState(true)
@@ -28,6 +31,9 @@ export default function App({ Component, pageProps }) {
 
   return(
       <ThemeProvider theme={theme}>
+        <AppContextProvider>
+          <GlobalSnackbar/>
+          <SimpleBackdrop/>
         <Grid container>
            { route &&  
           <Grid item xs={2.4}>
@@ -37,7 +43,8 @@ export default function App({ Component, pageProps }) {
           <Grid item xs={!route?12:9.6}>
         <Component {...pageProps} />
           </Grid>
-        </Grid>
+        </Grid> 
+      </AppContextProvider>
       </ThemeProvider>
     
     ) 

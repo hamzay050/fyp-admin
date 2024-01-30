@@ -1,10 +1,11 @@
 import React from 'react'
-import PendingRequest from '@/components/Admin/PendingRequest'
+import PendingRequest from '@/components/PendingRequest'
+import SecurePage from '@/components/SecurePage'
 
 export default function index() {
   return (
-    <div>
+    <SecurePage>
       <PendingRequest/>
-    </div>
+    </SecurePage>
   )
 }

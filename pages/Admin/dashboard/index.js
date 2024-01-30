@@ -1,12 +1,13 @@
 import React from 'react'
 import { Box } from '@mui/material'
-import Dashboard from '../../../components/Admin/Dashboard'
+import Dashboard from '@/components/Dashboard'
+import SecurePage from '@/components/SecurePage'
 
 const index = () => {
   return (
-    <Box>
-           <Dashboard/> 
-    </Box>
+    <SecurePage>
+      <Dashboard/> 
+    </SecurePage>
   )
 }
 

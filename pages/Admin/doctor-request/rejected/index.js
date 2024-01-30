@@ -1,10 +1,11 @@
 import React from 'react'
-import RejectedRequest from '@/components/Admin/RejectedRequest'
+import RejectedRequest from '@/components/RejectedRequest'
+import SecurePage from '@/components/SecurePage'
 
 export default function index() {
   return (
-    <div>
+    <SecurePage>
       <RejectedRequest/>
-    </div>
+    </SecurePage>
   )
 }
