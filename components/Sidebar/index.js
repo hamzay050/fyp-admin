@@ -39,33 +39,33 @@ const Sidebar = () => {
 
              <Box sx={{display:'flex',alignItems:'center',margin:'1rem 2rem'}}>
               <DashboardCustomizeIcon fontSize='small' sx={{color:'white',margin:'0 0.8rem 0 0.3rem'}}/>
-             <Link href='/admin/dashboard' style={{textDecoration:'none'}}><Button variant='text' sx={{color:'white'}}>Dashboard</Button></Link> 
+             <Link href='/dashboard' style={{textDecoration:'none'}}><Button variant='text' sx={{color:'white'}}>Dashboard</Button></Link> 
              </Box>
 
               <Typography variant='caption' sx={{color:'#c2c5c4e6',margin:'1rem'}}>Doctor Requests</Typography>
              <Box sx={{margin:'0.5rem 2rem'}}>
               <Box sx={{display:'flex',alignItems:'center',}}>
                <PendingActionsIcon fontSize='small' sx={{color:'white',margin:'0 0.8rem 0 0.3rem'}}/>
-               <Link href='/admin/doctor-request/pending' style={{textDecoration:'none'}}><Button variant='text' sx={{color:'white'}}>Pending</Button></Link>
+               <Link href='/doctor-request/pending' style={{textDecoration:'none'}}><Button variant='text' sx={{color:'white'}}>Pending</Button></Link>
               </Box>
               <Box sx={{display:'flex',alignItems:'center',}}>
                <RecommendIcon fontSize='small' sx={{color:'white',margin:'0 0.8rem 0 0.3rem'}}/>
-               <Link href='/admin/doctor-request/approved' style={{textDecoration:'none'}}><Button variant='text' sx={{color:'white'}}>Approved</Button></Link>
+               <Link href='/doctor-request/approved' style={{textDecoration:'none'}}><Button variant='text' sx={{color:'white'}}>Approved</Button></Link>
               </Box>
               <Box sx={{display:'flex',alignItems:'center',}}>
                <CloseIcon fontSize='small' sx={{color:'white',margin:'0 0.8rem 0 0.3rem'}}/>
-               <Link href='/admin/doctor-request/rejected' style={{textDecoration:'none'}}><Button variant='text' sx={{color:'white'}}>Rejected</Button></Link>
+               <Link href='/doctor-request/rejected' style={{textDecoration:'none'}}><Button variant='text' sx={{color:'white'}}>Rejected</Button></Link>
               </Box>
              </Box>
               <Typography variant='caption' sx={{color:'#c2c5c4e6',margin:'1rem'}}>Patient Complaints</Typography>
               <Box sx={{margin:'0.5rem 2rem'}}>
               <Box sx={{display:'flex',alignItems:'center',}}>
                <PendingIcon fontSize='small' sx={{color:'white',margin:'0 0.8rem 0 0.3rem'}}/>
-               <Link href='/admin/patient-complaints/pending' style={{textDecoration:'none'}}><Button variant='text' sx={{color:'white'}}>Pending</Button></Link>
+               <Link href='/patient-complaints/pending' style={{textDecoration:'none'}}><Button variant='text' sx={{color:'white'}}>Pending</Button></Link>
               </Box>
               <Box sx={{display:'flex',alignItems:'center',}}>
                <CheckCircleOutlineIcon fontSize='small' sx={{color:'white',margin:'0 0.8rem 0 0.3rem'}}/>
-               <Link href='/admin/patient-complaints/fulfilled' style={{textDecoration:'none'}}><Button variant='text' sx={{color:'white'}}>Fulfilled</Button></Link>
+               <Link href='/patient-complaints/fulfilled' style={{textDecoration:'none'}}><Button variant='text' sx={{color:'white'}}>Fulfilled</Button></Link>
               </Box>
               </Box>
               <Divider sx={{borderColor:'rgb(255 255 254 / 58%)',width:'90%',marginLeft:'0.6rem',marginBottom:'1.6rem',marginTop:'8rem'}}/>
