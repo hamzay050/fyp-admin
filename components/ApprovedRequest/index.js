@@ -32,21 +32,25 @@ export default function ApprovedRequest() {
     }
   return (
     <>
-    <Box sx={{backgroundColor:'white',width:'280px',height:'280px',margin:'2rem',border:'1px solid #d5d3d3',borderRadius:'5px'}}>
-        <Box sx={{display:'flex',justifyContent:'end',margin:'0.5rem 1rem'}}>
+    {/* ,width:'220px',height:'210px' */}
+       <Box display="flex" justifyContent="space-around" alignItems="center"  sx={{backgroundColor:'white',boxShadow:1,margin:'2rem',border:'1px solid #d5d3d3',borderRadius:'5px'}}>
+        
+      <Box sx={{display:'flex',gap:"10px",alignItems:'center',margin:'1rem 0'}}>
+
+    <Avatar alt="Remy Sharp" sx={{width:'40px',height:'40px'}} src="/static/images/avatar/1.jpg" />
+    <Typography variant='body1' sx={{fontWeight:'600',color:'#3c3e3ee6',fontSize:"14px"}}>Dr. John Doe</Typography>
+    </Box>
+    <Box height="30px" width="110px" backgroundColor="rgb(239,230,255)" display="flex" alignItems="center" justifyContent="center" borderRadius="50px">
+                <Typography variant='body2' color="#800080">Pshychologist</Typography>
+            </Box>
+      
+      <Box sx={{display:'flex',justifyContent:'end',margin:'0.5rem 1rem'}}>
             <CheckCircleIcon fontSize='small' color='primary'/>
             <Typography variant='caption' color='primary'>Approved</Typography>
         </Box>
-      <Box sx={{display:'flex',flexDirection:'column',alignItems:'center',margin:'1rem 0'}}>
-    <Avatar alt="Remy Sharp" sx={{width:'100px',height:'100px'}} src="/static/images/avatar/1.jpg" />
-    <Box m='1rem 0 0 0' sx={{display:'flex',flexDirection:'column',alignItems:'center'}}>
-    <Typography variant='body1' sx={{fontWeight:'600',color:'#3c3e3ee6'}}>Doctor John Doe</Typography>
-    <Typography variant='body2' sx={{margin:'0.1rem 0',color:'#3c3e3ee6'}}>Pshychologist</Typography>
-    </Box>
-      </Box>
-      <Box sx={{display:'flex',justifyContent:'center',margin:'0 0 1.3rem 0'}}>
+        <Box sx={{display:'flex',justifyContent:'center'}}>
 
-      <Button onClick={handleOpen} variant='contained' color='secondary' sx={{color:'#fff',width:'150px'}}>Details</Button>
+      <Button onClick={handleOpen} variant='contained' size='small' color='secondary' sx={{color:'#fff'}}>Details</Button>
       </Box>
     </Box>
 
