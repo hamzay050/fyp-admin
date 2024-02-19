@@ -4,32 +4,37 @@ import CheckCircleIcon from '@mui/icons-material/CheckCircle';
 export default function FulfilledComplaint() {
   return (
     <>
-         <Box sx={{display:'flex',justifyContent:'center',margin:'2rem 0'}}>
-      <Grid container sx={{backgroundColor:'white',border:'1px solid #d5d3d3',borderRadius:'5px',width:'80%',minHeight:'200px',maxHeight:'auto'}}>
-        <Grid item xs={4} sx={{borderRight:'1px solid #d5d3d3'}}>
-    <Box sx={{height:'66%',display:'flex',justifyContent:'center',margin:'0.5rem 0 0 0',alignItems:'center',flexDirection:'column'}}>
-    <Avatar alt="Remy Sharp" sx={{width:'70px',height:'70px'}} src="/static/images/avatar/1.jpg" />
-    <Typography variant='body1' sx={{fontWeight:'600',color:'#3c3e3ee6',margin:'0.5rem 0'}}>Doctor John Doe</Typography>
-          </Box>
-          <Box sx={{display:'flex',justifyContent:'start',flexDirection:'column',margin:'0 0.2rem'}}>
-            <Typography variant='body2' sx={{fontWeight:'600',color:'#3c3e3ee6'}}>Submitted By:</Typography>
-            <Typography variant='p' sx={{marginLeft:'1rem'}}>Patient Name</Typography>
-            <Typography variant='p' sx={{marginLeft:'1rem'}}>Patient Email</Typography>
-          </Box>
+         <Box sx={{display:'flex',justifyContent:'center',margin:'2rem 0',height:"120px"}}>
+      <Grid container spacing={1} sx={{backgroundColor:'#fff',border:'1px solid #d5d3d3',boxShadow:1,borderRadius:'10px',width:'80%',maxHeight:"200px", mixHeight:'auto'}}>
+        <Grid item xs={1} sx={{display:"flex" ,justifyContent:"center"}}>
+        <Box display="flex" alignItems="center">
+        <Avatar  alt="Remy Sharp" src="/static/images/avatar/1.jpg"   sx={{ width: 56, height: 56 }}
+       
+ />
+  </Box>
         </Grid>
-        <Grid item xs={8}>
-          <Box sx={{margin:'1rem'}}>
-            <Typography variant='body1' sx={{fontWeight:'600',marginBottom:'0.5rem'}}>Complain Reason</Typography>
-            <Typography variant='p'>Corporis ea praesentium dolor nobis Lorem ipsum dolor sit amet consectetur adipisicing elit. Maiores placeat, sapiente dolorum iusto ab autem ipsam deleniti eaque maxime, accusamus rerum nam. Necessitatibus possimus facilis praesentium optio illo unde tempora? numquam exercitationem incidunt tenetur eveniet, velit earum.</Typography>
+        <Grid item xs={9}>
+          <Box  sx={{padding:"15px 0px 0px"}}>
+            <Typography variant='body1' sx={{fontSize:"14px",fontWeight:"600", marginBottom:'0.2rem'}}>John Deo</Typography>
+            <Typography variant='body2' sx={{fontSize:"12px"}}> Lorem ipsum dolor sit amet consectetur adipisicing elit. Tempora hic iusto sint, ducimus recusandae earum possimus cumque quis nulla! Qui!Lorem ipsum, dolor sit amet consectetur adipisicing elit. Corporis ea praesentium dolor nobis numquam exercitationem incidunt tenetur eveniet, velit earum.</Typography>
           </Box>
-          <Box sx={{display:'flex',justifyContent:'end',margin:'2rem'}}>
+         
+        </Grid>
+        <Grid item xs={2} sx={{}}>
+        <Box display="flex" justifyContent="center" mt="85px" ml="4px" >
             <CheckCircleIcon fontSize='small' color='primary'/>
-            <Typography variant='caption' color='primary'>Fulfilled</Typography>
+            <Typography variant='caption' color='primary' >Fulfilled</Typography>
         </Box>
         </Grid>
-      </Grid>
+        </Grid>
+       
+        </Box>
+       
+         
+        {/* </Grid> */}
+    
       
-    </Box> 
+    {/* </Box>  */}
     </>
   )
 }

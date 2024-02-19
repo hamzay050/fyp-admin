@@ -6,6 +6,8 @@ import { useEffect, useState } from 'react'
 import AppContextProvider from "@/context/appContext"
 import GlobalSnackbar from "@/components/Snackbar"
 import SimpleBackdrop from "@/components/SimpleBackdrop"
+import Navbar from "@/components/Navbar"
+import RightSideBar from "@/components/RightSideBar"
 
 export default function App({ Component, pageProps }) {
   const [route, setRoute] = useState(true)
@@ -34,16 +36,25 @@ export default function App({ Component, pageProps }) {
         <AppContextProvider>
           <GlobalSnackbar/>
           <SimpleBackdrop/>
-        <Grid container>
+          <Navbar/>
+        <Grid container >
            { route &&  
           <Grid item xs={2.4}>
             <Sidebar/>
           </Grid>
                } 
           <Grid item xs={!route?12:9.6}>
+            <Grid container>
+              <Grid item xs={9}>
         <Component {...pageProps} />
+        </Grid>
+        <Grid item  xs={3}>
+       < RightSideBar />
+        </Grid>
+        </Grid>
+
           </Grid>
-        </Grid> 
+          </Grid>
       </AppContextProvider>
       </ThemeProvider>
     
