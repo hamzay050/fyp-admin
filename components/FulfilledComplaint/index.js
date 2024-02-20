@@ -20,12 +20,6 @@ export default function FulfilledComplaint() {
           </Box>
          
         </Grid>
-        <Grid item xs={2} sx={{}}>
-        <Box display="flex" justifyContent="center" mt="85px" ml="4px" >
-            <CheckCircleIcon fontSize='small' color='primary'/>
-            <Typography variant='caption' color='primary' >Fulfilled</Typography>
-        </Box>
-        </Grid>
         </Grid>
        
         </Box>
