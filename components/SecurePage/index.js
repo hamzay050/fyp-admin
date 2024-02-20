@@ -1,4 +1,3 @@
-import React from 'react'
 import { useRouter } from "next/router";
 import { useEffect } from 'react';
 import jwt from "jsonwebtoken"
@@ -13,7 +12,7 @@ export default function SecurePage({children}) {
     console.log("🚀 ~ useEffect ~ cookiesData:", token);
 
     if(!token){
-        router.push('/admin')
+        router.push('/')
     }
 
     try {
@@ -23,7 +22,7 @@ export default function SecurePage({children}) {
         }
     } catch (error) {
         console.log(error)
-        router.push('/admin')
+        router.push('/')
     }
 },[router])
    return children;

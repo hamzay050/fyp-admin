@@ -26,7 +26,7 @@ const Login = () => {
 
       if (!response.error) {
         localStorage.setItem("userData", JSON.stringify(response.data));
-        router.push("/admin/dashboard");
+        router.push("/dashboard");
       } else {
         console.log("Login failed");
         setSnackbarState({
