@@ -24,19 +24,19 @@ const Index = () => {
   return (
    <>
    <AppBar position="static" elevation="0" >
-    <Toolbar sx={{height:"70px", justifyContent:"space-between" }}>
+    <Toolbar variant='dense' sx={{justifyContent:"space-between" }}>
       
      
-    <Box sx={{display:'flex',alignItems:'center',padding:'0.5rem 0.5rem 0.2rem 0.5rem',color:"black"}}>
+    <Box sx={{display:'flex',alignItems:'center',color:"black"}}>
                 <Image
                 src='/Assests/mlogo.png'
                 width={60}
-                height={60}
+                height={53}
                 alt='Logo Image'/>
                 <Typography variant='body2' sx={{fontWeight:'600',color:'white'}}>HEALTH EASE</Typography>
              </Box>
              <Avatar
-                size="medium"
+                size="small"
                 onClick={toggleMenu}
                 sx={{ cursor: "pointer", border: "1px solid #d7c2c29e" }}
                 src="/Assests/hero1.png"

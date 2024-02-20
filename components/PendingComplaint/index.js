@@ -24,24 +24,24 @@ export default function PendingComplaint() {
   return (
     <>
     <Box sx={{display:'flex',justifyContent:'center',margin:'2rem 0',height:"120px"}}>
-      <Grid container  justifyContent="space-around" sx={{backgroundColor:'#fff',border:'1px solid #d5d3d3',borderRadius:'10px',width:'80%',maxHeight:"200px", mixHeight:'auto',boxShadow:1}}>
-        <Grid item xs={1.5} sx={{display:"flex" ,justifyContent:"center"}}>
+      <Grid container  justifyContent="space-around" alignItems='center' sx={{backgroundColor:'#fff',border:'1px solid #d5d3d3',borderRadius:'10px',width:'80%',maxHeight:"200px", mixHeight:'auto',boxShadow:1}}>
+        <Grid item xs={1} sx={{display:"flex" ,justifyContent:"center"}}>
           <Box display="flex" alignItems="center">
         <Avatar  alt="Remy Sharp" src="/static/images/avatar/1.jpg"   sx={{ width: 56, height: 56 }}
        
  />
   </Box>
         </Grid>
-        <Grid item xs={9.5}>
+        <Grid item xs={9}>
           <Box  sx={{padding:"15px 0px 0px"}}>
             <Typography variant='body1' sx={{fontSize:"14px",fontWeight:"600", marginBottom:'0.2rem'}}>John Deo</Typography>
             <Typography variant='body2' sx={{fontSize:"12px"}}> Lorem ipsum dolor sit amet consectetur adipisicing elit. Tempora hic iusto sint, ducimus recusandae earum possimus cumque quis nulla! Qui!Lorem ipsum, dolor sit amet consectetur adipisicing elit. Corporis ea praesentium dolor nobis numquam exercitationem incidunt tenetur eveniet, velit earum.</Typography>
           </Box>
          
         </Grid>
-        <Grid item xs={1} sx={{paddingLeft:"10px",paddingTop:"15px"}} >
+        <Grid item xs={1}  >
       
-        <MoreHorizIcon sx={{}}    onClick={toggleMenu}      
+        <MoreHorizIcon sx={{position:'relative'}}    onClick={toggleMenu}      
  />
      
       {Setting && (
@@ -49,7 +49,6 @@ export default function PendingComplaint() {
                 sx={{
                   padding:"10px",
                   position: "absolute",
-                  right: "18%",
                   width: "130px",
                   height: "auto",
                   boxShadow:"5px 5px 5px  lightblue",
