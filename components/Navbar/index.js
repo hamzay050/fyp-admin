@@ -36,9 +36,9 @@ const Index = () => {
                 <Typography variant='body2' sx={{fontWeight:'600',color:'white'}}>HEALTH EASE</Typography>
              </Box>
              <Avatar
-                size="small"
+                // size="small"
                 onClick={toggleMenu}
-                sx={{ cursor: "pointer", border: "1px solid #d7c2c29e" }}
+                sx={{ cursor: "pointer", border: "1px solid #d7c2c29e"  ,width:"40px", length:"40px"}}
                 src="/Assests/hero1.png"
               >
                 M
