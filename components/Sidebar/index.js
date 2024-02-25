@@ -27,7 +27,7 @@ const Sidebar = () => {
 
   return (
     // width={250}
-    <Box height="100vh"  sx={{backgroundColor:'white'}}  >
+    <Box height="90vh" position='fixed'  sx={{backgroundColor:'white'}}  >
       {/* <Box sx={{display:'flex',alignItems:'center',padding:'0.5rem 0.5rem 0.2rem 0.5rem',color:"black"}}>
                 <Image
                 src='/Assests/mlogo.png'
