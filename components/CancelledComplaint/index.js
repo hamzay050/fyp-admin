@@ -2,18 +2,18 @@ import {Box,Typography,Grid, Button,Avatar} from '@mui/material'
 import { useState,useEffect } from 'react';
 import {GET} from "@/services/httpClient"
 
-export default function FulfilledComplaint() {
+export default function CancelledComplaint() {
   const [data, setData] = useState([])
-  async function getApprovedReports(){
+  async function getCancelledReports(){
     try{
-     const response= await GET('/report/approved')
+     const response= await GET('/report/cancelled')
      setData(response)
     }catch(error){
         console.log(error)
     }
    }
    useEffect(()=>{
-    getApprovedReports()
+    getCancelledReports()
    },[])
   return (
     <>
@@ -51,3 +51,4 @@ export default function FulfilledComplaint() {
     </>
   )
 }
+

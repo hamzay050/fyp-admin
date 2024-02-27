@@ -66,15 +66,23 @@ const Sidebar = () => {
               <Typography variant='caption' sx={{color:'#c2c5c4e6',margin:'1rem'}}>Patient Complaints</Typography>
               <Box sx={{margin:'0.5rem 2rem'}}>
               <Box sx={{display:'flex',alignItems:'center',}}>
+               <PersonIcon fontSize='small' sx={{color:'#6a6a6a',margin:'0 0.8rem 0 0.3rem'}}/>
+               <Link href='/patient-complaints/all-request' style={{textDecoration:'none'}}><Button variant='text' sx={{color:'#6a6a6a'}}><Typography variant='body1' fontSize="14px" textTransform="none">All</Typography></Button></Link>
+              </Box>
+              <Box sx={{display:'flex',alignItems:'center',}}>
                <PendingIcon fontSize='small' sx={{color:'#6a6a6a',margin:'0 0.8rem 0 0.3rem'}}/>
                <Link href='/patient-complaints/pending' style={{textDecoration:'none'}}><Button variant='text' sx={{color:'#6a6a6a'}}><Typography variant='body1' fontSize="14px" textTransform="none">Pending</Typography></Button></Link>
               </Box>
               <Box sx={{display:'flex',alignItems:'center',}}>
                <CheckCircleOutlineIcon fontSize='small' sx={{color:'#6a6a6a',margin:'0 0.8rem 0 0.3rem'}}/>
-               <Link href='/patient-complaints/fulfilled' style={{textDecoration:'none'}}><Button variant='text' sx={{color:'#6a6a6a'}}><Typography variant='body1' fontSize="14px" textTransform="none">Fullfill</Typography></Button></Link>
+               <Link href='/patient-complaints/fulfilled' style={{textDecoration:'none'}}><Button variant='text' sx={{color:'#6a6a6a'}}><Typography variant='body1' fontSize="14px" textTransform="none">Fullfilled</Typography></Button></Link>
+              </Box>
+              <Box sx={{display:'flex',alignItems:'center',}}>
+               <CloseIcon fontSize='small' sx={{color:'#6a6a6a',margin:'0 0.8rem 0 0.3rem'}}/>
+               <Link href='/patient-complaints/cancelled' style={{textDecoration:'none'}}><Button variant='text' sx={{color:'#6a6a6a'}}><Typography variant='body1' fontSize="14px" textTransform="none">Cancelled</Typography></Button></Link>
               </Box>
               </Box>
-              <Divider sx={{borderColor:'lightgrey',width:'90%',marginLeft:'0.6rem',marginBottom:'1.6rem',marginTop:'8rem'}}/>
+              <Divider sx={{borderColor:'lightgrey',width:'90%',marginLeft:'0.6rem',marginBottom:'0.5rem'}}/>
                  <Box sx={{margin:'0.5rem 2rem',display:'flex',alignItems:'center'}}>
                  <Avatar alt="Remy Sharp" src="/static/images/avatar/1.jpg" />
                  <Typography variant='body2' sx={{fontWeight:'600',color:'#6a6a6a',margin:'0 1rem'}}>Jimmi Khan</Typography>

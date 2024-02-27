@@ -1,4 +1,3 @@
-import React from 'react'
 import HeroSection from '../HeroSection'
 import VaccinesIcon from '@mui/icons-material/Vaccines';
 import GroupsIcon from '@mui/icons-material/Groups';
@@ -10,10 +9,27 @@ import PeopleIcon from '@mui/icons-material/People';
 import GridViewIcon from '@mui/icons-material/GridView';
 import LiChart from "../Charts/LineCharts";
 import  PiChart   from "@/components/Charts/PieCharts"
-
-  
+import {GET} from "@/services/httpClient"
+import { useState,useEffect } from 'react';
 
 export default function Dashboard() {
+  const [doctorsCount, setDoctorsCount] = useState(0);
+  const [patientsCount, setPatientsCount] = useState(0);
+
+  useEffect(() => {
+    async function fetchData() {
+      try {
+        const doctorsResponse = await GET('/doctor/doctor-profiles');
+        const patientsResponse = await GET('/profile/patient/profiles');
+        setDoctorsCount(doctorsResponse.length);
+        setPatientsCount(patientsResponse.length);
+      } catch (error) {
+        console.error('Error fetching data:', error);
+      }
+    }
+
+    fetchData();
+  }, []);
 
   return (
     <>
@@ -25,7 +41,7 @@ export default function Dashboard() {
         </Box>
         <Box sx={{display:'flex',flexDirection:'column',justifyContent:'center',alignItems:'end',margin:'0 1rem'}}>
           <Typography variant='body2' sx={{color:'#9fa5a3',fontWeight:600}}>Total Doctor</Typography>
-          <Typography variant='body1' sx={{fontWeight:600,color:'#4f5050'}}>3000</Typography>
+          <Typography variant='body1' sx={{fontWeight:600,color:'#4f5050'}}>{doctorsCount}</Typography>
         </Box>
      </Box>
      {/* <Box sx={{width:'252px',border:'1px solid #ddd8d8',borderRadius:'9px',boxShadow:1,height:'110px',margin:' 0.5rem',backgroundColor:'white'}}>
@@ -42,8 +58,8 @@ export default function Dashboard() {
           <GridViewIcon fontSize='medium' sx={{color:'#fff'}}/>
         </Box>
         <Box sx={{display:'flex',flexDirection:'column',justifyContent:'center',alignItems:'end',margin:'0 1rem'}}>
-          <Typography variant='body2' sx={{color:'#9fa5a3',fontWeight:600}}>Total Doctor</Typography>
-          <Typography variant='body1' sx={{fontWeight:600,color:'#4f5050'}}>3000</Typography>
+          <Typography variant='body2' sx={{color:'#9fa5a3',fontWeight:600}}>Total Patients</Typography>
+          <Typography variant='body1' sx={{fontWeight:600,color:'#4f5050'}}>{patientsCount}</Typography>
         </Box>
      </Box>
      <Box sx={{width:'300px',border:'1px solid #ddd8d8',borderRadius:'9px',boxShadow:1,height:'110px',backgroundColor:'white'}}>
@@ -51,7 +67,7 @@ export default function Dashboard() {
           <PeopleIcon fontSize='medium' sx={{color:'#fff'}}/>
         </Box>
         <Box sx={{display:'flex',flexDirection:'column',justifyContent:'center',alignItems:'end',margin:'0 1rem'}}>
-          <Typography variant='body2' sx={{color:'#9fa5a3',fontWeight:600}}>Total Doctor</Typography>
+          <Typography variant='body2' sx={{color:'#9fa5a3',fontWeight:600}}>Total Appointments</Typography>
           <Typography variant='body1' sx={{fontWeight:600,color:'#4f5050'}}>3000</Typography>
         </Box>
      </Box>

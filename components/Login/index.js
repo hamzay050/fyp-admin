@@ -17,6 +17,7 @@ const Login = () => {
     const params = {
       email: data.email,
       password: data.password,
+      role:'doctor'
     };
 
     try {

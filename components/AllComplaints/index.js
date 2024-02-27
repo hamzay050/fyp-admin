@@ -1,24 +1,28 @@
-import {Box,Typography,Grid, Button,Avatar} from '@mui/material'
-import { useState,useEffect } from 'react';
+import React,{useEffect, useState} from 'react'
+import {Avatar, Box, Typography,Modal,Grid,Badge} from '@mui/material'
 import {GET} from "@/services/httpClient"
 
-export default function FulfilledComplaint() {
+const Index = () => {
   const [data, setData] = useState([])
-  async function getApprovedReports(){
-    try{
-     const response= await GET('/report/approved')
-     setData(response)
-    }catch(error){
-        console.log(error)
-    }
-   }
-   useEffect(()=>{
-    getApprovedReports()
-   },[])
+
+      async function getAllReports(){
+       try{
+        const response= await GET('/report')
+        setData(response)
+       }catch(error){
+           console.log(error)
+       }
+      }
+     useEffect(()=>{
+        getAllReports()
+     },[])
+
   return (
+    
     <>
-        {
-          data?.map((report)=>{
+
+{
+       data &&  data?.map((report)=>{
             return(
               <Box key={report._id} sx={{display:'flex',justifyContent:'center',margin:'2rem 0',height:"auto"}}>
               <Grid container spacing={1} alignItems='center' sx={{backgroundColor:'#fff',border:'1px solid #d5d3d3',padding:'0.2rem 0',boxShadow:1,borderRadius:'10px',width:'80%',maxHeight:"200px", mixHeight:'auto'}}>
@@ -36,18 +40,21 @@ export default function FulfilledComplaint() {
                   </Box>
                  
                 </Grid>
+                <Grid item xs={2}>
+                <Box width="110px" display="flex" alignItems="center" justifyContent="center" borderRadius="50px">
+            <Badge badgeContent={report.status} color={(report.status==='pending' || report.status==='rejected')?'secondary':'primary'} />
+          </Box>
+                </Grid>
                 </Grid>
                
                 </Box>
             )
           })
         }
-       
-         
-        {/* </Grid> */}
-    
-      
-    {/* </Box>  */}
+
     </>
   )
 }
+
+export default Index
+        
