@@ -15,14 +15,16 @@ import { useState,useEffect } from 'react';
 export default function Dashboard() {
   const [doctorsCount, setDoctorsCount] = useState(0);
   const [patientsCount, setPatientsCount] = useState(0);
-
+  const [appointmentCount, setAppointmentCount] = useState(0)
   useEffect(() => {
     async function fetchData() {
       try {
         const doctorsResponse = await GET('/doctor/doctor-profiles');
         const patientsResponse = await GET('/profile/patient/profiles');
+        const appointmentResponse = await GET('/appointment');
         setDoctorsCount(doctorsResponse.length);
         setPatientsCount(patientsResponse.length);
+        setAppointmentCount(appointmentResponse.length)
       } catch (error) {
         console.error('Error fetching data:', error);
       }
@@ -68,11 +70,11 @@ export default function Dashboard() {
         </Box>
         <Box sx={{display:'flex',flexDirection:'column',justifyContent:'center',alignItems:'end',margin:'0 1rem'}}>
           <Typography variant='body2' sx={{color:'#9fa5a3',fontWeight:600}}>Total Appointments</Typography>
-          <Typography variant='body1' sx={{fontWeight:600,color:'#4f5050'}}>3000</Typography>
+          <Typography variant='body1' sx={{fontWeight:600,color:'#4f5050'}}>{appointmentCount}</Typography>
         </Box>
      </Box>
      </Box>
-     <Grid container spacing={3} sx={{marginTop:"20px"}}>
+     <Grid container spacing={3} sx={{marginTop:"8px"}}>
       <Grid item sm={8}>
       <Box bgcolor="white" height="350px" boxShadow="1" borderRadius='9px'>
         <Typography variant='body1' pt="20px" pl="15px">
@@ -84,7 +86,7 @@ export default function Dashboard() {
       <Grid item sm="4">
         <Box bgcolor="white" height="350px"  boxShadow="1" borderRadius='9px' marginRight="10px" >
         <Typography variant='body1' pt="20px" pl="15px">
-          Website Visitor
+          Appointment status
           
         </Typography>
         <Box height="280px" display="flex" alignItems="center">
