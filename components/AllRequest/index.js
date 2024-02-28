@@ -1,5 +1,6 @@
 import React,{useEffect, useState} from 'react'
-import {Avatar, Box, Typography,Modal,Grid,Badge} from '@mui/material'
+import {Avatar, Box, Typography,Modal,Grid,Badge, TextField,InputAdornment} from '@mui/material'
+import {Search} from "@mui/icons-material"
 import {GET} from "@/services/httpClient"
 import ClearIcon from '@mui/icons-material/Clear';
 
@@ -21,6 +22,7 @@ const Index = () => {
   const [data, setData] = useState([])
   const [userData, setUserData] = useState([])
   const [open, setOpen] = useState(false);
+  const [search, setSearch] = useState("")
   const handleClose = () => setOpen(false);
 
       async function getDoctorProfiles(){
@@ -44,9 +46,36 @@ const Index = () => {
           console.log(error)
          }
      }
+
+     const filteredData= data && data.filter((value)=>{
+      const response= search
+      ? value.firstName.toLowerCase() === search.toLowerCase()
+      : true;
+      return response;
+     })
   return (
     
     <>
+
+    <Box mt='1rem' display='flex' justifyContent='end' width='94%'>
+    {data && data.length>0 && 
+   <TextField
+   label='Search..'
+   variant="outlined"
+   size="small"
+   value={search}
+   onChange={(e)=>setSearch(e.target.value)}
+   InputProps={{
+    endAdornment: (
+      <InputAdornment position="end">
+        <Search />
+      </InputAdornment>
+    ),
+  }}
+   sx={{}}
+ />
+    }
+    </Box>
 
       <Grid container justifyContent='center'>
         <Grid item xs={11}>
@@ -59,7 +88,7 @@ const Index = () => {
             <Typography>Status</Typography>
            
          </Box>
-       {data && data.map((value)=>{
+       {filteredData && filteredData.map((value)=>{
         return(
           <Box display="flex" key={value._id} onClick={()=>handleClick(value._id)}  justifyContent="space-between" alignItems="center" boxShadow="2" mt="10px" mr="13px" height="60px" borderRadius="8px" pl="20px" pr="10px" backgroundColor="white" >
           <Box display="flex" gap="5px" alignItems="center" > <Avatar sx={{width:"30px",height:"30px"}}></Avatar> <Typography variant='body2'>{value.firstName+ " "+ value.lastName}</Typography></Box>

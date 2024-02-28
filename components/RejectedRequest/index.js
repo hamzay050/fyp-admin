@@ -1,5 +1,6 @@
 import React,{useState,useEffect} from 'react'
-import { Box,Avatar,Typography,Button,Modal,Badge } from '@mui/material'
+import { Box,Avatar,Typography,Button,Modal,Badge,TextField,InputAdornment } from '@mui/material'
+import { Search } from '@mui/icons-material';
 import ClearIcon from '@mui/icons-material/Clear';
 import {GET} from "@/services/httpClient"
 
@@ -22,6 +23,7 @@ export default function RejectedRequest() {
   const [data, setData] = useState([])
   const [userData, setUserData] = useState([])
   const [open, setOpen] = useState(false);
+  const [search, setSearch] = useState("")
   const handleClose = () => setOpen(false);
 
   async function getDoctorApprovedProfiles(){
@@ -46,14 +48,39 @@ export default function RejectedRequest() {
       console.log(error)
      }
    }
+   const filteredData= data && data.filter((value)=>{
+    const response= search
+    ? value.firstName.toLowerCase() === search.toLowerCase()
+    : true;
+    return response;
+   })
   return (
    
     <>
+       <Box mt='1rem' display='flex' justifyContent='end' width='94%'>
+    {data && data.length>0 && 
+   <TextField
+   label='Search..'
+   variant="outlined"
+   size="small"
+   value={search}
+   onChange={(e)=>setSearch(e.target.value)}
+   InputProps={{
+    endAdornment: (
+      <InputAdornment position="end">
+        <Search />
+      </InputAdornment>
+    ),
+  }}
+   sx={{}}
+ />
+    }
+    </Box>
       {
-        data && data.map((value)=>{
+        filteredData && filteredData.map((value)=>{
           return(
             <Box display='flex' justifyContent='center'>
-<Box display="flex" justifyContent="space-around" alignItems="center"  sx={{backgroundColor:'white',boxShadow:1,margin:'2rem',border:'1px solid #d5d3d3',borderRadius:'5px',width:'80%'}}>
+<Box display="flex" justifyContent="space-around" alignItems="center"  sx={{backgroundColor:'white',boxShadow:1,margin:'0.7rem',border:'1px solid #d5d3d3',borderRadius:'5px',width:'80%'}}>
         
         <Box sx={{display:'flex',gap:"10px",alignItems:'center',margin:'0.4rem 0'}}>
   

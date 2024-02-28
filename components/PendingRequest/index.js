@@ -5,9 +5,10 @@ import {
   Typography,
   Button,
   Modal,
-  Grid,
-  Divider,
+  TextField,
+  InputAdornment
 } from "@mui/material";
+import { Search } from "@mui/icons-material";
 import ClearIcon from "@mui/icons-material/Clear";
 import PendingActionsIcon from "@mui/icons-material/PendingActions";
 import {GET,UPDATE} from "@/services/httpClient"
@@ -30,6 +31,7 @@ export default function PendingRequest() {
   const [data, setData] = useState([])
   const [userData, setUserData] = useState([])
   const [open, setOpen] = useState(false);
+  const [search, setSearch] = useState("")
   const handleClose = () => setOpen(false);
 
   async function getDoctorPendingProfiles(){
@@ -64,11 +66,35 @@ export default function PendingRequest() {
       console.log(error)
     }
    }
-
+   const filteredData= data && data.filter((value)=>{
+    const response= search
+    ? value.firstName.toLowerCase() === search.toLowerCase()
+    : true;
+    return response;
+   })
   return (
     <>
+       <Box mt='1rem' display='flex' justifyContent='end' width='94%'>
+    {data && data.length>0 && 
+   <TextField
+   label='Search..'
+   variant="outlined"
+   size="small"
+   value={search}
+   onChange={(e)=>setSearch(e.target.value)}
+   InputProps={{
+    endAdornment: (
+      <InputAdornment position="end">
+        <Search />
+      </InputAdornment>
+    ),
+  }}
+   sx={{}}
+ />
+    }
+    </Box>
      {
-      data && data.map((value)=>{
+      filteredData && filteredData.map((value)=>{
        return(
         <Box display="flex" justifyContent="center" key={value._id}>
         <Box
