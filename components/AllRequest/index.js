@@ -91,7 +91,7 @@ const Index = () => {
        {filteredData && filteredData.map((value)=>{
         return(
           <Box display="flex" key={value._id} onClick={()=>handleClick(value._id)}  justifyContent="space-between" alignItems="center" boxShadow="2" mt="10px" mr="13px" height="60px" borderRadius="8px" pl="20px" pr="10px" backgroundColor="white" >
-          <Box display="flex" gap="5px" alignItems="center" > <Avatar sx={{width:"30px",height:"30px"}}></Avatar> <Typography variant='body2'>{value.firstName+ " "+ value.lastName}</Typography></Box>
+          <Box display="flex" gap="5px" alignItems="center" > <Avatar src={value.profilePicture?process.env.NEXT_PUBLIC_BASE_URL+value.profilePicture:''} sx={{width:"30px",height:"30px"}}></Avatar> <Typography variant='body2'>{value.firstName+ " "+ value.lastName}</Typography></Box>
           <Typography variant='body2'>{value.email}</Typography>
           <Typography variant='body2'>{value.country}</Typography>
           <Typography variant='body2'>{value.contactNumber}</Typography>
