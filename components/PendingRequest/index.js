@@ -121,7 +121,7 @@ export default function PendingRequest() {
             <Avatar
               alt="Remy Sharp"
               sx={{ width: "40px", height: "40px" }}
-              src="/static/images/avatar/1.jpg"
+              src={value.profilePicture?process.env.NEXT_PUBLIC_BASE_URL+value.profilePicture:''}
             />
             <Typography
               variant="body1"

@@ -84,7 +84,7 @@ export default function ApprovedRequest() {
         
         <Box sx={{display:'flex',gap:"10px",alignItems:'center',margin:'0.4rem 0'}}>
   
-      <Avatar alt="Remy Sharp" sx={{width:'40px',height:'40px'}} src="/static/images/avatar/1.jpg" />
+      <Avatar alt="Remy Sharp" sx={{width:'40px',height:'40px'}} src={value.profilePicture?process.env.NEXT_PUBLIC_BASE_URL+value.profilePicture:''} />
       <Typography variant='body1' sx={{fontWeight:'600',color:'#3c3e3ee6',fontSize:"14px"}}>{value.firstName + " " + value.lastName}</Typography>
       </Box>
       <Box height="30px" width="110px" backgroundColor="rgb(239,230,255)" display="flex" alignItems="center" justifyContent="center" borderRadius="50px">
